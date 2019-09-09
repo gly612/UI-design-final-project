@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+	<script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
+	<script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"></script>
+	<link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+	<script type="text/javascript" src="{{ url_for('static', filename = 'threshold.js') }}"></script>
+	<script type="text/javascript">
+		var threshold = {{threshold|tojson}};
+	</script>
+	<style type="text/css">
+		body {
+			background-color: #e9ecef
+		}
+		h5 {
+			display: inline-block;
+		}
+		h4 {
+			display: inline-block;
+		}
+		h3 {
+			display: inline-block;
+			font-weight: bold;
+		}
+		p {
+			display: inline-block;
+			color: red;
+		}
+		.line {
+			display: inline-block;
+		}
+
+		.container {
+		  z-index: 0;
+		  position: relative;
+		  text-align: center;
+		  padding-top: 25vh;
+		}
+		.jumbotron {
+			padding-bottom: 2rem;
+		}
+		#threshold-save-alert {
+			font-weight: bold;
+			color: blue;
+			font-size: 1.5rem;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div class="jumbotron">
+		  <h1 class="display-4"> <p>Calorie Calculation</p> Website</h1>
+		  <h5>First, you need to</h5>&nbsp; <h4>SET A THRESHOLD</h4> <h5>for each meal</h5>
+		  <hr class="my-4">
+		</div>
+		<div>
+			<h4>Please input your</h4>&nbsp;<h3>threshold here:</h3> &nbsp;
+			<!-- Please input your <p>THRESHOLD HERE</p>: &nbsp; -->
+			<div class="line"><input id="auto" type="text" size="10"></div>&nbsp; cals &nbsp;&nbsp;&nbsp;
+			<button type="button" class="btn btn-primary">Submit</button><br>
+			<br><div id="threshold-save-alert"></div>
+		</div><br><br><br>
+		<a class="btn btn-primary btn-md" href="http://127.0.0.1:5000/main" role="button">Good! Go next!</a>
+	</div>
+	
+</body>
+</html>

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+	<script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
+	<script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"></script>
+	<link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+	<script type="text/javascript" src="{{ url_for('static', filename = 'main.js') }}"></script>
+	<script type="text/javascript">
+		var threshold = {{threshold|tojson}};
+		var searched_data = {{searched_data|tojson}};
+
+	</script>
+	<style type="text/css">
+		#threshold {
+			font-weight: bold;
+			font-size: larger;
+		}
+		#total-font {
+			font-weight: bold;
+			font-size: larger;
+		}
+		h2 {
+			display: inline-block;
+		}
+		h4 {
+			display: inline-block;
+		}
+		h3 {
+			display: inline-block;
+			color: red;
+		}
+		h5 {
+			display: inline-block;
+		}
+		p {
+			display: inline-block;
+			color: red;
+		}
+		.foodlist-title {
+			font-weight: bold;
+			font-size: large;
+		}
+		.name {
+			display: inline-block;
+			color: blue;
+		}
+		#total {
+			display: inline-block;
+			font-size: 2rem;
+		}
+		#list {
+			display: inline-block;
+		}
+		#food-not-found-alert {
+			font-weight: bold;
+			color: red;
+		}
+		#record-save-alert {
+			font-weight: bold;
+			font-size: 1.5rem;
+			color: blue;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div class="jumbotron">
+		 <h1 class="display-4"> <p>Calorie Calculation</p> Website</h1>
+		  <hr class="my-4">
+		</div>
+		<!-- <div class="container">
+			<div>
+				<div id="threshold">
+					<h5>The threshold you set is:</h5>&nbsp; <h3>500</h3> <h5>cals</h5>
+				</div>
+			</div><br>
+		</div> -->
+		
+		<div class="container">
+			<div class="row">
+				<div class="col-md-6">
+					<div class="row">
+						<div class="col-md-8">
+							<div><input type="text" class="form-control" id="search" placeholder="search" size="30"></div>
+						</div>
+					    <div class="col-md-4">
+					    	<button type="submit" class="btn btn-primary" id="search-button">Search</button>
+					    </div>
+					    <br><br>
+						<ul id="display-search">
+							<!-- <li>Apple <img src="https://www.pressurecookrecipes.com/wp-content/uploads/2016/03/perfect-pressure-cooker-rice-fb.jpg" height="80px" width="100px">---40 cals <input type="text" placeholder="Amount"> <i class="far fa-plus-square"></i></li> -->
+						</ul>
+						<div id="food-not-found-alert"></div>
+						<div id = "display"></div>
+					</div>
+				</div> 
+				<div class="col-md-6">
+					<div class="row">
+						<div class="col-md-3">
+							<div class = "foodlist-title"><h4>Food</h4></div>
+						</div>
+						<div class="col-md-4">
+							<div class = "foodlist-title"><h4>Image</h4></div>
+						</div>
+						<div class="col-md-3">
+							<div class = "foodlist-title"><h4>Calories</h4></div>
+						</div>
+					</div>
+					<div id="food-list"></div><br>
+					
+				</div>
+			</div>
+			
+		</div><br>
+		<hr class="my-4">
+		<div>
+				<div id="threshold">
+					<!-- <h5>The threshold you set is:</h5>&nbsp; <h3>500</h3> <h5>cals</h5> -->
+				</div>
+			</div>
+			<div id="total-font">Total calories: <div id="total"></div> cals</div><br>
+			<div id="exceed-alert">
+				<!-- <img src="https://media.giphy.com/media/CjVjrzOsGN7q0/giphy.gif" width="25%">
+				<h2>HHHHH</h2> -->
+			</div>
+			<div>
+				<div id="record-save-alert"></div>
+				<button type="submit" class="btn btn-primary" id="record-save">Save</button>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				<a href="http://127.0.0.1:5000/record">Go to see your record</a>
+				<div id="record-save-alert"></div>
+			</div>
+	</div>
+	
+</body>
+</html>

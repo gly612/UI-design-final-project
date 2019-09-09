@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+	<script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
+	<script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"></script>
+	<link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+	<script type="text/javascript" src="{{ url_for('static', filename = 'record.js') }}"></script>
+	<script type="text/javascript">
+		var records = {{records|tojson}};
+	</script>
+	<style type="text/css">
+		p {
+			display: inline-block;
+			color: red;
+		}
+		h4 {
+			display: inline-block;
+		}
+		h3 {
+			display: inline-block;
+			color: blue;
+		}
+		.jumbotron {
+			padding-bottom: 2rem;
+		}
+	</style>
+	
+</head>
+<body>
+	<div class="container">
+		<div class="jumbotron">
+		  <h1 class="display-4"> <p>Calorie Calculation</p> Website</h1>
+		  <hr class="my-4">
+		  <h4>Hi, this is your</h4>&nbsp; <h3>RECORD</h3> <h4>page</h4>
+		  <br><br><br>
+		  <div>
+		  	<a class="btn btn-primary btn-md" href="http://127.0.0.1:5000/" role="button">Go to home page</a>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			<a class="btn btn-primary btn-md" href="http://127.0.0.1:5000/main" role="button">Add another record</a>
+		  </div>
+		</div>
+
+	</div>
+	
+	<div class="container" id="list"></div><br><br>
+	<!-- <div class="container">
+		<a class="btn btn-primary btn-md" href="http://127.0.0.1:5000/" role="button">Go to home page</a>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		<a class="btn btn-primary btn-md" href="http://127.0.0.1:5000/main" role="button">Add another record</a>
+	</div> -->
+	
+</body>
+</html>
